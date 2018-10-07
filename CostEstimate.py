@@ -20,6 +20,7 @@ time_on_ground = 0.51 * 10 ** (-6) * take_off_weight + 0.125
 time_block = time_on_ground + time_to_cruise + time_in_cruise + t_de # what is t_de?
 annual_use = 1000 * (3.4546 * time_block + 2.944 - 12.289 * time_block ** 2 - 5.6626 * time_block + 8.964) ** 0.5
 
+cost_of_crew = 0
 block_speed = block_distance / time_block
 pilot_salary = 85000
 cost_of_crew = cost_of_crew + 2 * ((1.26 / block_speed) * (pilot_salary / 800) + 7 / block_speed)  # cost_of_crew in its own equation?
