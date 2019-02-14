@@ -21,12 +21,14 @@ maneuver_time_from_atc = 0.25 * 10 ** (-6) * take_off_weight + 0.0625
 distance_from_atc_maneuvering = cruise_velocity * maneuver_time_from_atc
 distance_of_decent = 90
 distance_of_climb = 100
-time_in_cruise = (1.06 * block_distance - distance_of_climb - distance_of_decent + distance_from_atc_maneuvering) \
+time_in_cruise = (1.06 * (block_distance - distance_of_climb - distance_of_decent + distance_from_atc_maneuvering)) \
                  / cruise_velocity
 
 time_on_ground = 0.51 * 10 ** (-6) * take_off_weight + 0.125
 time_block = time_on_ground + time_to_cruise + time_in_cruise + time_to_descend
 annual_use = 1000 * (3.4546 * time_block + 2.944 - 12.289 * time_block ** 2 - 5.6626 * time_block + 8.964) ** 0.5
+
+print("time_block: " + str(time_block))
 
 block_speed = block_distance / time_block
 #pilot_salary = 85000
