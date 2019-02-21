@@ -1,6 +1,9 @@
 # Andrew Scherping
 # 2/21/2019
 # Script to determine the cost of research and development
+# I do not own these methods but are taken from
+# Jan Roskam-Airplane Design Part 8 Airplane Cost Estimation Design Development Manufacturing and Operating
+
 import math
 
 w_takeoff = 2500  # takeoff weight, lbs
@@ -41,7 +44,7 @@ c_ea_r = ((c_e_r * n_e) + (c_p_r * n_p) + c_avionic_r) * (n_rdte - n_st)
 # The number of manufacturing man hours, hrs - mhr_man_r
 mhr_man_r = 28.984 * (w_ampr ** 0.740) * (v_max ** 0.543) * (n_rdte ** 0.524) * f_diff
 # The manufacturing labor rate, USD - r_m_r
-r_m_r = 30 * (cef / 2.7)
+r_m_r = 30 * (cef / 2.7)  # TODO
 # Total costs of manufacturing labor
 c_man_r = mhr_man_r * r_m_r
 # The cost of material to manufacture the flight test planes - c_mat_r
@@ -54,7 +57,7 @@ n_r_r = 0.33
 # The tooling man hours, hrs - mhr_tool_r
 mhr_tool_r = 4.0127 * (w_ampr ** 0.764) * (v_max ** 0.899) * (n_rdte ** 0.178) * (n_r_r ** 0.066) * f_diff
 # The manufacturing tooling labor rate, USD - r_m_r
-r_t_r = 40 * (cef / 2.7)
+r_t_r = 40 * (cef / 2.7)  # TODO
 c_tool_r = mhr_tool_r * r_t_r
 
 # Quality control cost associated with manufacturing of the flight test airplanes - c_qc_r
@@ -84,3 +87,108 @@ print("Costs from the profit of this stage: $" + str(c_pro_r))
 # Sum of the costs to get the total cost
 c_total = c_aed_r + c_dst_r + c_fta_r + c_fto_r + c_tsf_r + c_pro_r
 print("The total costs of developement are: $" + str(c_total))
+
+
+def get_rdte_costs():
+
+    return c_total
+
+
+def get_c_aed_r():
+
+    return c_aed_r
+
+
+def get_w_ampr():
+
+    return w_ampr
+
+
+def get_v_max():
+
+    return v_max
+
+
+def get_f_diff():
+
+    return f_diff
+
+
+def get_f_cad():
+
+    return f_cad
+
+
+def get_r_e_r():
+
+    return r_e_r
+
+
+def get_c_e_r():
+
+    return c_e_r
+
+
+def get_n_e():
+
+    return n_e
+
+
+def get_c_p_r():
+
+    return c_p_r
+
+
+def get_n_p():
+
+    return n_p
+
+
+def get_c_avionics_r():
+
+    return c_avionic_r
+
+
+def get_cef():
+
+    return cef
+
+
+def get_c_man_r():
+
+    return c_man_r
+
+
+def get_r_m_r():
+
+    return r_m_r
+
+
+def get_n_rdte():
+
+    return n_rdte
+
+
+def get_n_st():
+
+    return n_st
+
+
+def get_f_mat():
+
+    return f_mat
+
+
+def get_c_mat_r():
+
+    return c_mat_r
+
+
+def get_c_tool_r():
+
+    return c_tool_r
+
+
+def get_r_t_r():
+
+    return r_t_r
