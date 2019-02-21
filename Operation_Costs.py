@@ -1,6 +1,8 @@
 # Andrew Scherping
 # 2/14/2019
 # Script to determine the direct operating cost of an aircraft
+# I do not own these methods but are taken from
+# Jan Roskam-Airplane Design Part 8 Airplane Cost Estimation Design Development Manufacturing and Operating
 
 # TODO - need to be defined better
 Takeoff_Weight = 4510  # Total Takeoff Weight, lbs
@@ -104,3 +106,8 @@ print("The operating cost of depreciation: $" + str(depr) + "/nm")
 
 DOC = flt + maint + depr  # DOC - Direct operating costs, USD/nm
 print("The direct operating cost: $" + str(DOC) + "/nm")
+
+
+def get_operatation_cost_per_hr():
+
+    return DOC
