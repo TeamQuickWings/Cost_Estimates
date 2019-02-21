@@ -4,6 +4,8 @@
 # I do not own these methods but are taken from
 # Jan Roskam-Airplane Design Part 8 Airplane Cost Estimation Design Development Manufacturing and Operating
 
+print("Operation Costs")
+
 # TODO - need to be defined better
 Takeoff_Weight = 4510  # Total Takeoff Weight, lbs
 Speed_cruise = 180  # cruise velocity, knots

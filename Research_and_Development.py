@@ -6,6 +6,8 @@
 
 import math
 
+print("Research, Development, Test and Evaluation costs")
+
 w_takeoff = 2500  # takeoff weight, lbs
 v_max = 180  # cruise speed, knots
 c_e_r = 45000  # cost per engine, USD
@@ -24,7 +26,7 @@ w_ampr = 10 ** (0.1936 + (0.8645 * math.log10(w_takeoff)))  # TODO
 f_diff = 1.2
 # factor which accounts for the availability of cad - f_cad
 f_cad = 0.8
-mhr_aed_r = 0.0396 *(w_ampr ** 0.791) * (v_max * 1.526) * (n_rdte ** 0.183) * f_diff * f_cad
+mhr_aed_r = 0.0396 * (w_ampr ** 0.791) * (v_max * 1.526) * (n_rdte ** 0.183) * f_diff * f_cad
 # Cost escalation factor - cef
 cef = 4
 # Engineering man-hour rate
@@ -84,9 +86,13 @@ f_pro_r = 0.1
 c_pro_r = f_pro_r * c_rdte
 print("Costs from the profit of this stage: $" + str(c_pro_r))
 
+# Sum of costs before profit
+c_total_no_profit = c_aed_r + c_dst_r + c_fta_r + c_fto_r + c_tsf_r
+print("The cost of development before profit: $" + str(c_total_no_profit))
+
 # Sum of the costs to get the total cost
-c_total = c_aed_r + c_dst_r + c_fta_r + c_fto_r + c_tsf_r + c_pro_r
-print("The total costs of developement are: $" + str(c_total))
+c_total = c_total_no_profit + c_pro_r
+print("The total costs of development are: $" + str(c_total))
 
 
 def get_rdte_costs():

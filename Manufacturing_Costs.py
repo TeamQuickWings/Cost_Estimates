@@ -5,8 +5,11 @@
 # I do not own these methods but are taken from
 # Jan Roskam-Airplane Design Part 8 Airplane Cost Estimation Design Development Manufacturing and Operating
 
-import Research_and_Development as rd
 import Operation_Costs as os
+import Research_and_Development as rd
+
+print("Manufacturing Costs")
+
 n_program = 1000  # The number of aircraft to be produced in this program
 n_m = n_program - rd.get_n_rdte() - rd.get_n_st()
 
