@@ -4,13 +4,11 @@
 # I do not own these methods but are taken from
 # Jan Roskam-Airplane Design Part 8 Airplane Cost Estimation Design Development Manufacturing and Operating
 
-print("Operation Costs")
+print("Operation Costs before labor")
 
-# TODO - need to be defined better
 Takeoff_Weight = 4510  # Total Takeoff Weight, lbs
 Speed_cruise = 180  # cruise velocity, knots
-Estimated_price = 200000  # Estimated cost of the airplane
-C_aircraft_block = 500  # cost the airframe and systems maintenance materials cost per airplane, USD
+Estimated_price = 900000  # Estimated cost of the airplane
 Number_of_Engines = 1  # The number of engines, unit less
 H_overhaul = 1400  # Engine hours between overhauls
 Engine_price = 40000  # The price of the engine, USD
@@ -43,6 +41,8 @@ time_decent = 0.25  # Estimated time to descend, hrs
 time_block = time_ground + time_climb + time_cruise + time_decent  # time block, hrs
 
 V_block = Range_block / time_block  # Block speed, nm
+# cost the airframe and systems maintenance materials cost per airplane, USD
+C_aircraft_block = (36 * (4 / 3) * 0.25) + ((0.79 * (10 ** -5)) * (Estimated_price - Engine_price))
 C_airframe = 1.03 * (C_aircraft_block / V_block)  # Cost of airframe and systems maintenance, USD/nm
 
 K_H = (0.076 * (H_overhaul / 100)) + 0.164  # Factor for period between engine overhaul

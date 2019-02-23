@@ -10,7 +10,7 @@ import Research_and_Development as rd
 
 print("Manufacturing Costs")
 
-n_program = 1000  # The number of aircraft to be produced in this program
+n_program = 514  # The number of aircraft to be produced in this program
 n_m = n_program - rd.get_n_rdte() - rd.get_n_st()
 
 # Total estimated manufacturing costs - c_man
@@ -82,8 +82,8 @@ print("The estimated cost of the manufacturing of the airplanes: $" + str(c_man)
 
 # Profit - c_pro
 # Percent of profit - f_pro_m
-f_pro_m = 0.1
+f_pro_m = 0.0
 c_pro = f_pro_m * c_man
 
 aep = (c_man + c_pro + rd.get_rdte_costs()) / n_m
-print("Cost of aircraft per unit: $" + str(aep) + "/unit")
+print("Cost of aircraft per unit: $" + str(aep) + "/unit for " + str(n_m) + " units")
